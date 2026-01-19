@@ -13,6 +13,10 @@ const SKILLS = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const isHappy = true;
 const isFinished = false;
 const goal = 3;
+
+const skillColour = "crimson";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -22,16 +26,16 @@ const goal = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
-        <style>
-            h1 {
-                color: purple;
-                font-size: 4rem;
-            }
-
-            .skill {
-                color: green;
-                font-weight: bold;
-            }
+        <style define:vars={{skillColour, fontWeight, textCase}}>
+        h1 {
+            color: purple;
+            font-size: 4rem;
+        }
+        .skill {
+            color: var(--skillColour);
+            font-weight: var(--fontWeight);
+            text-transform: var(--textCase);;
+        }
         </style>
 	</head>
 	<body>
