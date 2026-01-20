@@ -1,43 +1,14 @@
-# Astro Starter Kit: Minimal
+# Astro Tutorial: Blog
+Building a blog following Astro's tutorial. 
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Includes:
+1. file-based routing across main pages (home, about, and tags),
+2. use of layouts for DRYness
+3. styling (both globally-scoped and local)
+4. content collections for blog posts, including querying all blog posts for its tags
+5. filtering blog posts based on tags, each tag having a dynamically-generated page (eg `/tags/astro` would be all the blog posts with the tag `'astro'` in it)
+6. integration of Preact component (`Greeting.jsx`)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+and others.
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Excludes: RSS feeds because I don't really need that for what I'm trying to build with Astro right now
