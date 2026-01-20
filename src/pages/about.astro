@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import "../styles/global.css"
+import "../styles/global.css";
 
 const pageTitle = "About Me";
 
@@ -14,7 +14,7 @@ const IDENTITY = {
 const SKILLS = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
 const isHappy = true;
-const isFinished = false;
+const isFinished = true;
 const goal = 3;
 
 const skillColour = "crimson";
@@ -23,33 +23,48 @@ const textCase = "uppercase";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-        <h2>... and my new Astro site</h2>
-        <p>I am working through Astro's introductory tutorial. This is the second page on my website.</p>
+  <h2>... and my new Astro site</h2>
+  <p>
+    I am working through Astro's introductory tutorial. This is the second page
+    on my website.
+  </p>
 
-        <p>Here are a few facts about me:</p>
-        <ul>
-            <li>My name is {IDENTITY.firstName}.</li>
-            <li>I live in {IDENTITY.country} and I work as a {IDENTITY.occupation}.</li>
-            {IDENTITY.hobbies.length >= 2 && <li>Two of my hobbies are: {IDENTITY.hobbies[0]} and {IDENTITY.hobbies[1]}</li>}
-        </ul>
-        <p>My skills are:</p>
-        <ul>
-            {SKILLS.map(skill => <li class="skill">{skill}</li>)}
-        </ul>
+  <p>Here are a few facts about me:</p>
+  <ul>
+    <li>My name is {IDENTITY.firstName}.</li>
+    <li>I live in {IDENTITY.country} and I work as a {IDENTITY.occupation}.</li>
+    {
+      IDENTITY.hobbies.length >= 2 && (
+        <li>
+          Two of my hobbies are: {IDENTITY.hobbies[0]} and {IDENTITY.hobbies[1]}
+        </li>
+      )
+    }
+  </ul>
+  <p>My skills are:</p>
+  <ul>
+    {SKILLS.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
 
-        {isHappy && <p>I am happy to be learning Astro!</p>}
-        {isFinished && <p>I finished this tutorial!</p>}
-        {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+  {isHappy && <p>I am happy to be learning Astro!</p>}
+  {isFinished && <p>I finished this tutorial!</p>}
+  {
+    goal === 3 ? (
+      <p>My goal is to finish in 3 days.</p>
+    ) : (
+      <p>My goal is not 3 days.</p>
+    )
+  }
 </BaseLayout>
 
-<style is:global define:vars={{skillColour, fontWeight, textCase}}>
-    h1 {
-        color: purple;
-        font-size: 4rem;
-    }
-    .skill {
-        color: var(--skillColour);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textCase);;
-    }
+<style is:global define:vars={{ skillColour, fontWeight, textCase }}>
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
+  .skill {
+    color: var(--skillColour);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
 </style>
